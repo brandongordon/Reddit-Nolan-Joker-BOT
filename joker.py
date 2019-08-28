@@ -40,7 +40,7 @@ for comment in subreddit.stream.comments():
 		print ("-----------------\n")
 		
 		#store the current ID into our list
-		posts_replied_to.append(submission.id)
+		posts_replied_to.append(comment.id)
 			
 		#write our updated list back to the file
 		with open("posts_replied_to.txt", "w") as f:
