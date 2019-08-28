@@ -32,7 +32,7 @@ reddit = praw.Reddit('nolan-joker-bot')
 subreddit = reddit.subreddit("nolanbatmanmemes")
 
 for comment in subreddit.stream.comments():
-	if re.search("joker", comment.body, re.IGNORECASE) and comment.id not in posts_replied_to::
+	if re.search("joker", comment.body, re.IGNORECASE) and comment.id not in posts_replied_to:
 		print ("Target comment: ", comment.body)
 		joker_reply = random.choice(joker_quotes)
 		comment.reply(joker_reply)
