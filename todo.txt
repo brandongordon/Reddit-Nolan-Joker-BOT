@@ -1,0 +1,5 @@
++ readme.md
++ write script.sh which does all the git shite for me
++ Make joker.py more abstract - less hard coded values
++ Scan multiple subreddits?
++ Listen for more words? "Heath?" 

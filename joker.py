@@ -19,7 +19,7 @@ subreddit = reddit.subreddit("nolanbatmanmemes")
 for comment in subreddit.stream.comments():
 	if re.search("joker", comment.body, re.IGNORECASE):
 		print ("Target comment: ", comment.body)
-		joker_reply = "**" + random.choice(joker_quotes) + "**"
+		joker_reply = random.choice(joker_quotes)
 		comment.reply(joker_reply)
 		print ("Joker reply: ", joker_reply)
 		print ("-----------------\n")
