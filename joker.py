@@ -44,6 +44,6 @@ for comment in subreddit.stream.comments():
 			
 		#write our updated list back to the file
 		with open("posts_replied_to.txt", "w") as f:
-			for post_id in posts_replied_to:
-				f.write(post_id + "\n")
+			for comment_id in posts_replied_to:
+				f.write(comment_id + "\n")
 		
