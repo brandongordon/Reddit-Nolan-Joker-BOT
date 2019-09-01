@@ -36,7 +36,7 @@ for comment in subreddit.stream.comments():
 		print ("Target comment: ", comment.body)
 		joker_reply = random.choice(joker_quotes)
 		comment.reply(joker_reply)
-		print ("Joker reply: ", joker_reply)
+		print ("\t|\n\tv\nJoker reply: ", joker_reply)
 		print ("-----------------\n")
 		
 		#store the current ID into our list
