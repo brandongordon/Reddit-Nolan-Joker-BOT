@@ -10,7 +10,7 @@ listening_subreddit = "nolanbatmanmemes"
 listening_term = "joker"
 
 def let_joker_talk(comment, quote):
-	print ("Target comment: ", comment)
+	print ("Target comment: ", comment.body)
 	comment.reply(quote)
 	print ("\t|\n\tv\nJoker reply: ", quote)
 	print ("-----------------\n")
@@ -50,7 +50,7 @@ for comment in subreddit.stream.comments():    #For each comment in the subreddi
 	if re.search(listening_term, comment.body, re.IGNORECASE) and comment.id not in posts_replied_to:
 		#Reply to the comment with a random quote from a list of quotes
 		reply = random.choice(joker_quotes)
-		let_joker_talk(comment.body, reply)
+		let_joker_talk(comment, reply)
 				
 		#store the current ID into our list
 		posts_replied_to.append(comment.id)
