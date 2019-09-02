@@ -5,14 +5,25 @@ import re
 import random
 import os
 
+quotes_file = "quotes.txt"
+listening_subreddit = "nolanbatmanmemes"
+listening_term = "joker"
+
+def let_joker_talk(comment, quote):
+	print ("Target comment: ", comments)
+	comment.reply(quote)
+	print ("\t|\n\tv\nJoker reply: ", quote)
+	print ("-----------------\n")
+
+
 #Read the quote file into a list and remove any empty values
-with open("quotes.txt", "r") as f:
+with open(quotes_file, "r") as f:
 	joker_quotes = f.read()
 	joker_quotes = joker_quotes.split("\n")
 	joker_quotes = list(filter(None, joker_quotes))
 	
 	
-#Have we run this code before? If not, create an empty list
+#Have we run this code before? If not, create an empty list of posts replied to
 if not os.path.isfile("posts_replied_to.txt"):
 	posts_replied_to = []
 	
@@ -29,16 +40,16 @@ else:
 #Create the Reddit instance
 reddit = praw.Reddit('nolan-joker-bot')
 
-subreddit = reddit.subreddit("nolanbatmanmemes")
+#Select subreddit we are listening to
+subreddit = reddit.subreddit(listening_subreddit)
 
-for comment in subreddit.stream.comments():
-	if re.search("joker", comment.body, re.IGNORECASE) and comment.id not in posts_replied_to:
-		print ("Target comment: ", comment.body)
-		joker_reply = random.choice(joker_quotes)
-		comment.reply(joker_reply)
-		print ("\t|\n\tv\nJoker reply: ", joker_reply)
-		print ("-----------------\n")
-		
+
+for comment in subreddit.stream.comments():    #For each comment in the subreddit (as they appear)
+	if re.search(listening_term, comment.body, re.IGNORECASE) and comment.id not in posts_replied_to:
+		#Reply to the comment with a random quote from a list of quotes
+		reply = random.choice(joker_quotes)
+		let_joker_talk(comment.body, reply)
+				
 		#store the current ID into our list
 		posts_replied_to.append(comment.id)
 			
