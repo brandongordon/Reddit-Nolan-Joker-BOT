@@ -10,10 +10,12 @@ listening_subreddit = "nolanbatmanmemes"
 listening_term = "joker"
 
 def let_joker_talk(comment, quote):
-	print ("Target comment: ", comments)
+	print ("Target comment: ", comment)
 	comment.reply(quote)
 	print ("\t|\n\tv\nJoker reply: ", quote)
 	print ("-----------------\n")
+	
+#----------------------------------------------------------------------------------------#
 
 
 #Read the quote file into a list and remove any empty values
