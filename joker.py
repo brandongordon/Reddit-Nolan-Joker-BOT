@@ -16,7 +16,7 @@ def let_joker_talk(comment, quote):
 	print ("-----------------\n")
 	
 #----------------------------------------------------------------------------------------#
-
+print ("\t\t-=-=-=-=(Running Nolan-Joker-Bot)=-=-=-=-=\n")
 
 #Read the quote file into a list and remove any empty values
 with open(quotes_file, "r", encoding="utf-8") as f:
