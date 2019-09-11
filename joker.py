@@ -19,7 +19,7 @@ def let_joker_talk(comment, quote):
 
 
 #Read the quote file into a list and remove any empty values
-with open(quotes_file, "r") as f:
+with open(quotes_file, "r", encoding="utf-8") as f:
 	joker_quotes = f.read()
 	joker_quotes = joker_quotes.split("\n")
 	joker_quotes = list(filter(None, joker_quotes))
@@ -32,7 +32,7 @@ if not os.path.isfile("posts_replied_to.txt"):
 #If we have run the code before, load the list of posts we have replied to
 else:
 	#Read the file into a list and remove any empty values
-	with open("posts_replied_to.txt", "r") as f:
+	with open("posts_replied_to.txt", "r", encoding="utf-8") as f:
 		posts_replied_to = f.read()
 		posts_replied_to = posts_replied_to.split("\n")
 		posts_replied_to = list(filter(None, posts_replied_to))
